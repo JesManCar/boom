@@ -10,6 +10,12 @@ addEventListener("keypress", (event) => {
     }
 });
 
+document.addEventListener("click", () => {
+    if(!blocked){
+        if(userInput.value>0) Game(userInput.value);
+    }
+})
+
 restart.addEventListener("click", () => {
     clearScreen();
 })
@@ -22,13 +28,10 @@ const repeat = (time,delay, func) => new Promise ((resolve) => {
 })
 
 const countDown = (count,div) => {
-    //console.log("repeat")
     if(!div.innerText) {
-        //console.log("hola")
         div.innerText=count;
     }
     else {
-        //console.log("adios")
         div.innerText = div.innerText-1;
     }
 } 
