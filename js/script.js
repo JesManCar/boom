@@ -1,6 +1,7 @@
 const userInput = document.getElementById("userInput");
 const countDownDiv = document.getElementById("countdown");
 const result = document.getElementById("result");
+const restart = document.getElementById("restart");
 let blocked = false;
 
 addEventListener("keypress", (event) => {
@@ -8,6 +9,10 @@ addEventListener("keypress", (event) => {
         if(userInput.value>0) Game(userInput.value);
     }
 });
+
+restart.addEventListener("click", () => {
+    clearScreen();
+})
 
 const totalTime = (time) => new Promise((resolve) => setTimeout(resolve,time));
 
