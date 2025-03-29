@@ -17,22 +17,24 @@ const repeat = (time,delay, func) => new Promise ((resolve) => {
 })
 
 const countDown = (count,div) => {
-    console.log("repeat")
+    //console.log("repeat")
     if(!div.innerText) {
-        console.log("hola")
+        //console.log("hola")
         div.innerText=count;
     }
     else {
-        console.log("adios")
+        //console.log("adios")
         div.innerText = div.innerText-1;
     }
 } 
 
 const compareResults = (user,rnd,div) => {
     if(user==rnd){
-        div.innerText=`HAS DESACTIVADO LA BOMBA`;
+        div.innerText=`HAS DESACTIVADO LA BOMBA 👑`;
+        div.className="green"
     } else {
-        div.innerText=`LA BOMBA HA EXPLOTADO`;
+        div.innerText=`LA BOMBA HA EXPLOTADO 💣`;
+        div.className="red"
     }
 }
 
